@@ -2,9 +2,8 @@
 $checkbox-background-color: #dddddd;
 $checkbox-hover-background-color: #d3d3d3;
 
-@mixin fa-check{
-    &.fa-check{
-
+@mixin fa-check-common {
+    & {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -17,7 +16,6 @@ $checkbox-hover-background-color: #d3d3d3;
         height: 20px;
         
         &::before {
-            content: '\f00c'; /* Unicode character for checkmark in FontAwesome */
             position: absolute;
             top: 50%;
             left: 50%;
@@ -42,3 +40,35 @@ $checkbox-hover-background-color: #d3d3d3;
         }
     }
 }
+
+@mixin fa-check{
+    &.fa-check{
+        @include fa-check-common;
+        &::before {
+            content: '\f00c'; /* Unicode character for checkmark in FontAwesome */
+        }
+    }
+
+    &.fa-square-check {
+        @include fa-check-common;
+        &::before {
+            content: '\f14a'
+        }
+    }
+}
+
+@mixin fa-solid {
+    .fa-solid {
+        @include fa-check;
+
+        &.fa-check {
+            font-weight: 600;
+        }
+
+        &.fa-squre-check {
+            font-weight: 600;
+        }
+    }
+}
+
+
