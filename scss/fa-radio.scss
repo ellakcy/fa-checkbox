@@ -1,6 +1,6 @@
 
-@use("./mixin.scss")
+@use "mixin";
 
 input[type="radio"]{
-    @include fa-check
+    @include mixin.fa-check
 }

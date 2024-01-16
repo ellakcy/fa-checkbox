@@ -1,5 +1,5 @@
-@use("_mixin.scss")
+@use "mixin";
 
 input[type="checkbox"]{
-    @include fa-check
+    @include mixin.fa-check
 }
