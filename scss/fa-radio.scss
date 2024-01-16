@@ -1,0 +1,6 @@
+
+@import("./mixin.scss")
+
+input[type="radio"]{
+    @include fa-check
+}

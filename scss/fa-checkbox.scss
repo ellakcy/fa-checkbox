@@ -1,0 +1,5 @@
+@import("_mixin.scss")
+
+input[type="checkbox"]{
+    @include fa-check
+}

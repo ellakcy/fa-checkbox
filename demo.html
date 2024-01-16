@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Radio Button</title>
+    <!-- Include FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="./dist/all.css"
+</head>
+<body>
+
+    <h1> Using Radio</h1>
+    <div style="display:flex;flex-direction:column;">
+        <div>
+            <input id="1" type="radio" class="fa-check" name="myRadioGroup"> <label for="1">Without Border</label>
+        </div>
+        <div>
+            <input id="1" type="radio" class="fa-check" style="background-color:#dddddd;" name="myRadioGroup"> <label for="1">Without Border with color</label>
+        </div>
+        <div>
+            <input id="2" type="radio" class="fa-check border" name="myRadioGroup"> <label for="2">With Border</label>
+        </div>
+        <div>
+            <input id="3" type="radio" class="fa-check border radius" name="myRadioGroup"> <label for="3">With Border Radius</label>
+        </div>
+    </div>
+
+
+    <h1> Using checkbox</h1>
+    <div style="display:flex;flex-direction:column;">
+        <div>
+            <input id="ck1" type="checkbox" class="fa-check" name="myRadioGroup"> <label for="ck1">Without Border</label>
+        </div>
+        <div>
+            <input id="ck2" type="checkbox" class="fa-check border" name="myRadioGroup"> <label for="ck2">With Border</label>
+        </div>
+        <div>
+            <input id="ck3" type="checkbox" class="fa-check border radius" name="myRadioGroup"> <label for="ck3">With Border Radius</label>
+        </div>
+    </div>
+    
+    <input type="text" class="fa-check" placeholder="This must not be selected">
+
+</body>
+</html>

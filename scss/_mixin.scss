@@ -1,0 +1,44 @@
+
+$checkbox-background-color: #dddddd;
+$checkbox-hover-background-color: #d3d3d3;
+
+@mixin fa-check{
+    &.fa-check{
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        font: var(--fa-font-solid);
+        width: 20px;
+        height: 20px;
+        
+        &::before {
+            content: '\f00c'; /* Unicode character for checkmark in FontAwesome */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+        }
+
+        &.border {
+            border: 1px solid;
+        }
+
+        &.radius {
+            border-radius: 10%;
+        }
+
+        &:hover{
+            background-color: #d3d3d3;
+        }
+
+        &:checked::before{
+            visibility: visible
+        }
+    }
+}
