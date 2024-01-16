@@ -4,7 +4,11 @@
   "description": "Checkbox Css and SASS",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all --parallel watch-css start-server",
+    "watch-css": "sass --watch scss:dist",
+    "start-server": "live-server",
+    "sass": "sass"
   },
   "keywords": [
     "css",
@@ -12,5 +16,10 @@
     "fontawesome"
   ],
   "author": "Dimitrios Desyllas",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.69.7"
+  }
 }
