@@ -67,6 +67,10 @@ input[type=checkbox].fa-square-check::before {
   content: "\f14a";
 }
 
+.test {
+  color: black;
+}
+
 input[type=radio].fa-check {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -135,5 +139,9 @@ input[type=radio].fa-square-check:checked::before {
 input[type=radio].fa-square-check::before {
   content: "\f14a";
 }
+
+/**
+* This is a file that combines all css modules.
+*/
 
 /*# sourceMappingURL=all.css.map */

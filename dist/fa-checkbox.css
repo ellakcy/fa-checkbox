@@ -67,4 +67,8 @@ input[type=checkbox].fa-square-check::before {
   content: "\f14a";
 }
 
+.test {
+  color: black;
+}
+
 /*# sourceMappingURL=fa-checkbox.css.map */
