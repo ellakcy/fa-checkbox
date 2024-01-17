@@ -15,7 +15,8 @@ jobs:
 
         - name: "Setup Node"
           uses: actions/setup-node@latest
-
+          with:
+              node-version: 21
         - name: "Install npm dependencies"
           run: npm install
         - name: "Building SASS files"
