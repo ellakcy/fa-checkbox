@@ -14,7 +14,7 @@
     "checkbox",
     "fontawesome"
   ],
-  "author": "Dimitrios Desyllas",
+  "author": "Cypriot Free Software Foundation",
   "license": "MIT",
   "devDependencies": {
     "live-server": "^1.2.2",

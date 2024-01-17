@@ -34,6 +34,11 @@ jobs:
         - name: Install jq
           run: sudo apt-get install jq
 
+        - name: Set up Git Config
+          run: |
+            git config user.email "actions@github.com"
+            git config user.name "GitHub Actions"
+
         - name: Run Semantic Release
           env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
