@@ -4,7 +4,6 @@
   "description": "Checkbox Css and SASS",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm-run-all --parallel watch-css start-server",
     "watch-css": "sass --watch scss:dev",
     "start-server": "live-server",
