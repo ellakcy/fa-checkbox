@@ -17,8 +17,10 @@ jobs:
           uses: actions/setup-node@v4
           with:
               node-version: 21
+
         - name: "Install npm dependencies"
           run: npm install
+
         - name: "Building SASS files"
           run: npm run sass
 
@@ -31,9 +33,6 @@ jobs:
             token: ${{ secrets.MY_SECRET_TOKEN }}
             force: true
 
-        - name: Install jq
-          run: sudo apt-get install jq
-
         - name: Set up Git Config
           run: |
             git config user.email "actions@github.com"
@@ -44,17 +43,4 @@ jobs:
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: |
-            RELEASE_VERSION=$(npx semantic-release -d)
-            echo ${RELEASE_VERSION}
-
-
-        # - name: Create a GitHub release
-        #   if: github.ref == 'refs/heads/master'
-        #   id: create_release
-        #   uses: actions/create-release@v1
-        #   env:
-        #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #   with:
-        #     tag_name: ${{ steps.release_tag.outputs.versionNum }}
-        #     release_name: Release of SASS ${{ steps.get_version.outputs.versionNum }}
-        #     body: ${{ steps.tag_version.outputs.changelog }}
+            npx semantic-release -d
