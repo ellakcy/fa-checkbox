@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - dev
+      - master
 
 jobs:
   build:
@@ -32,6 +33,12 @@ jobs:
             files: ./dist/*
             token: ${{ secrets.MY_SECRET_TOKEN }}
             force: true
+
+        - name: Set a blank commit for version
+          uses: actions-x/commit@v6
+          with:
+            email: actions@github.com
+            name: Autocommiting Built CSS
 
         - name: Set up Git Config
           run: |
