@@ -14,11 +14,10 @@
     "start": "npm-run-all --parallel watch-css start-server",
     "watch-css": "sass --watch scss:dev",
     "start-server": "live-server",
-    "sass": " sass scss:dist",
+    "sass": "sass scss:dist",
     "prepare": "husky install",
-    "commitlint": "commitlint -E HUSKY_GIT_PARAMS",
-    "semantic-release": "semantic-release",
-    "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS",
+    "commit": "git-cz"
   },
   "husky": {
     "hooks": {
