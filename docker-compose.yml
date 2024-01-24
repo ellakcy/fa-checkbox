@@ -12,4 +12,4 @@ services:
     working_dir: "/home/node/app"
     volumes:
       - ".:/home/node/app"
-      - "~/.git:/home/node/app/.git"
+      - "~/.gitconfig:/home/node/.gitconfig"

@@ -1,22 +1,35 @@
 {
   "name": "fa-checkbox",
+  "author": "Cypriot Free Software Foundation",
+  "license": "MIT",
   "version": "0.0.0-semantic-release",
-  "description": "Checkbox Css and SASS",
+  "description": "CSS and SALL lib that shows a shows beautifull checkboxed using fontawesome",
   "main": "index.html",
-  "scripts": {
-    "start": "npm-run-all --parallel watch-css start-server",
-    "watch-css": "sass --watch scss:dev",
-    "start-server": "live-server",
-    "sass": " sass scss:dist"
-  },
   "keywords": [
     "css",
     "checkbox",
     "fontawesome"
   ],
-  "author": "Cypriot Free Software Foundation",
-  "license": "MIT",
+  "scripts": {
+    "start": "npm-run-all --parallel watch-css start-server",
+    "watch-css": "sass --watch scss:dev",
+    "start-server": "live-server",
+    "sass": " sass scss:dist",
+    "prepare": "husky install",
+    "commitlint": "commitlint -E HUSKY_GIT_PARAMS",
+    "semantic-release": "semantic-release",
+    "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run commitlint",
+      "prepare-commit-msg": "npm run prepare-commit-msg"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^18.5.0",
+    "@commitlint/config-conventional": "^18.5.0",
+    "husky": "^8.0.3",
     "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
     "sass": "^1.69.7",

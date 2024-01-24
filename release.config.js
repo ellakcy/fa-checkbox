@@ -18,7 +18,7 @@ module.exports = {
           "scss/*",
           'README.md'
         ],
-        "message": "Release: ${nextRelease.version} [skip ci]"
+        message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
     ],
     '@semantic-release/github',
