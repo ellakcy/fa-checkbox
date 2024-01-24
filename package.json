@@ -16,23 +16,26 @@
     "start-server": "live-server",
     "sass": "sass scss:dist",
     "prepare": "husky install",
+    "commitizen": "commitizen init cz-conventional-changelog --save-dev --save-exact --force",
     "commitmsg": "commitlint -E HUSKY_GIT_PARAMS",
     "commit": "git-cz"
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
       "commit-msg": "npm run commitmsg"
     }
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-customizable"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "devDependencies": {
     "@commitlint/cli": "^18.5.0",
     "@commitlint/config-conventional": "^18.5.0",
     "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^7.0.0",
     "husky": "^8.0.3",
     "live-server": "^1.2.2",
