@@ -61,7 +61,7 @@ jobs:
           with:
             repo_token: "${{ secrets.GITHUB_TOKEN }}"
             automatic_release_tag: "v${{ steps.version.outputs.version }}"
-            prerelease: ${{github.ref == 'refs/heads/master'}}
+            prerelease: ${{github.ref == 'refs/heads/dev'}}
             title: "Development Build"
             files: |
               cssonly.zip
