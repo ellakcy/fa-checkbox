@@ -2,11 +2,10 @@ name: deploy-release
 
 on:
   create:
-    tags:
-      - v*
 
 jobs:
   build:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current branch
