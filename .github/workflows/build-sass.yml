@@ -51,3 +51,13 @@ jobs:
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             custom_tag: ${{ steps.version.outputs.version }}
+        
+        - name: Make Css zip
+          run: |
+            zip -r cssonly.zip ./dist/*.css
+
+        - uses: ncipollo/release-action@v1
+          with:
+            artifacts: "cssonly.zip"
+            skipIfReleaseExists: true
+            name: "CSS files ${{ steps.version.outputs.version }}"
