@@ -25,6 +25,11 @@ jobs:
         - name: "Building SASS files"
           run: npm run sass
 
+        - name: Set up Git Config
+          run: |
+            git config user.email "actions@github.com"
+            git config user.name "GitHub Actions"
+
         - name: commit built sass
           uses: actions-x/commit@v6
           with:
@@ -34,20 +39,43 @@ jobs:
             token: ${{ secrets.MY_SECRET_TOKEN }}
             force: true
 
-        - name: Set a blank commit for version
-          uses: actions-x/commit@v6
+        - name: version
+          run: |
+            echo version=$(npm run version --silent) >> "$GITHUB_OUTPUT"
+
+        - name: Tag version
+          id: tag_version
+          if: github.ref == 'refs/heads/master'
+          uses: mathieudutour/github-tag-action@v5.5
           with:
-            email: actions@github.com
-            name: Autocommiting Built CSS
-
-        - name: Set up Git Config
-          run: |
-            git config user.email "actions@github.com"
-            git config user.name "GitHub Actions"
-
-        - name: Run Semantic Release
-          id: release
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            custom_tag: ${{ steps.version.outputs.version }}
+        
+        - name: Create a GitHub release
+          if: github.ref == 'refs/heads/master'
+          id: create_release
+          uses: actions/create-release@v1
           env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            tag_name: ${{ steps.version.outputs.version }}
+            release_name: Release APK ${{ steps.version.outputs.version }}
+            body: ${{ steps.tag_version.outputs.changelog }}
+        
+        - name: Make Css zip
+          # if: github.ref == 'refs/heads/master'
           run: |
-            npx semantic-release -d
+            zip -r cssonly.zip ./dist/*.css
+
+
+        - name: Make a seperate zip for CSS only zip
+          # if: github.ref == 'refs/heads/master'
+          id: upload-release-css
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: ./cssonly.zip
+            asset_name: cssonly.zip
+            asset_content_type: application/zip
