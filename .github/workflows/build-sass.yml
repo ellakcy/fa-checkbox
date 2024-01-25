@@ -57,11 +57,21 @@ jobs:
             zip -r cssonly.zip ./dist/*.css
 
         - uses: "marvinpinto/action-automatic-releases@latest"
-          # if: github.ref == 'refs/heads/master'
+          if: github.ref == 'refs/heads/dev'
           with:
             repo_token: "${{ secrets.GITHUB_TOKEN }}"
             automatic_release_tag: "v${{ steps.version.outputs.version }}"
-            prerelease: ${{github.ref == 'refs/heads/dev'}}
+            prerelease: true
             title: "Development Build"
+            files: |
+              cssonly.zip
+        
+        - uses: "marvinpinto/action-automatic-releases@latest"
+          if: github.ref == 'refs/heads/master'
+          with:
+            repo_token: "${{ secrets.GITHUB_TOKEN }}"
+            automatic_release_tag: "v${{ steps.version.outputs.version }}"
+            prerelease: false
+            title: "Release ${{ steps.version.outputs.version }}"
             files: |
               cssonly.zip
