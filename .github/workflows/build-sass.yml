@@ -60,6 +60,5 @@ jobs:
         - uses: ncipollo/release-action@v1
           with:
             artifacts: "cssonly.zip"
-            bodyFile: "body.md"
             skipIfReleaseExists: true
             name: "CSS files ${{ steps.version.outputs.version }}"
