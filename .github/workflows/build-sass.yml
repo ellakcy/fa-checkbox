@@ -42,7 +42,7 @@ jobs:
         - name: version
           id: version
           run: |
-            echo version=v$(npm run version --silent) >> "$GITHUB_OUTPUT"
+            echo version=$(npm run version --silent) >> "$GITHUB_OUTPUT"
 
         - name: Tag version
           id: tag_version
