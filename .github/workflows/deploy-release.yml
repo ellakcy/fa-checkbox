@@ -1,0 +1,25 @@
+name: deploy-release
+
+on:
+  create:
+    tags:
+      - v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Make Css zip
+        run: |
+          zip -r cssonly.zip ./dist/*.css
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "cssonly.zip"
+          skipIfReleaseExists: true
+          name: "CSS files ${{ steps.version.outputs.version }}"

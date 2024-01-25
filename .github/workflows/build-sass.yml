@@ -42,7 +42,7 @@ jobs:
         - name: version
           id: version
           run: |
-            echo version=$(npm run version --silent) >> "$GITHUB_OUTPUT"
+            echo version=v$(npm run version --silent) >> "$GITHUB_OUTPUT"
 
         - name: Tag version
           id: tag_version
@@ -51,14 +51,3 @@ jobs:
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             custom_tag: ${{ steps.version.outputs.version }}
-        
-        - name: Make Css zip
-          # if: github.ref == 'refs/heads/master'
-          run: |
-            zip -r cssonly.zip ./dist/*.css
-
-        - uses: ncipollo/release-action@v1
-          with:
-            artifacts: "cssonly.zip"
-            skipIfReleaseExists: true
-            name: "CSS files ${{ steps.version.outputs.version }}"
