@@ -40,6 +40,7 @@ jobs:
             force: true
 
         - name: version
+          id: version
           run: |
             echo version=$(npm run version --silent) >> "$GITHUB_OUTPUT"
 
