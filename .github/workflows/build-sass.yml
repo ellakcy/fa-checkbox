@@ -56,8 +56,12 @@ jobs:
           run: |
             zip -r cssonly.zip ./dist/*.css
 
-        - uses: ncipollo/release-action@v1
+        - uses: "marvinpinto/action-automatic-releases@latest"
+          # if: github.ref == 'refs/heads/master'
           with:
-            artifacts: "cssonly.zip"
-            skipIfReleaseExists: true
-            name: "CSS files ${{ steps.version.outputs.version }}"
+            repo_token: "${{ secrets.GITHUB_TOKEN }}"
+            automatic_release_tag: "v${{ steps.version.outputs.version }}"
+            prerelease: ${{github.ref == 'refs/heads/master}}
+            title: "Development Build"
+            files: |
+              cssonly.zip
