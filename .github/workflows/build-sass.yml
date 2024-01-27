@@ -44,9 +44,9 @@ jobs:
         - name: "Mark prelelease"
           if: github.ref == 'refs/heads/dev'
           run: |
-            npm version prerelease --preid=dev
+            npm version prerelease --preid=dev --no-commit-hooks --no-git-tag-version
 
-        - name: commit built sass
+        - name: commit built package.json
           if: github.ref == 'refs/heads/dev'
           uses: actions-x/commit@v6
           with:
