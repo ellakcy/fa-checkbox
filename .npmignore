@@ -1,6 +1,5 @@
 docker-compose.yml
 Dockerfile
-index.html
 .husky
 .github
 dev
