@@ -26,6 +26,7 @@ jobs:
         - name: "Building SASS files"
           run: npm run sass
 
+        
         - name: Set up Git Config
           run: |
             git config user.email "actions@github.com"
@@ -36,7 +37,22 @@ jobs:
           with:
             email: actions@github.com
             name: Autocommiting Built CSS
-            files: ./dist/*
+            files: ./dist/* package.json
+            token: ${{ secrets.MY_SECRET_TOKEN }}
+            force: true
+
+        - name: "Mark prelelease"
+          if: github.ref == 'refs/heads/dev'
+          run: |
+            npm version prerelease --preid=dev
+
+        - name: commit built sass
+          if: github.ref == 'refs/heads/dev'
+          uses: actions-x/commit@v6
+          with:
+            email: actions@github.com
+            name: Mark Release as prerelease for npm
+            files: package.json
             token: ${{ secrets.MY_SECRET_TOKEN }}
             force: true
 
@@ -77,16 +93,7 @@ jobs:
             files: |
               cssonly.zip
         
-        - name: Extract branch name
-          shell: bash
-          run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-          id: extract_branch
-
-
         - id: npm-publish
           name: publish into npmjs
-          run:|
-            if [ ${{ steps.extract_branch.outputs.branch }} == 'dev' ]; then
-
-            else
-            fi
+          run:
+            npm publish

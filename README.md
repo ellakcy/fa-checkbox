@@ -1,12 +1,40 @@
-# fa-check
+# fa-checkbox
 
-CSS libt for Checkboxes and radio buttons that display fa-check icon from fontawesome.
+CSS and SASS library for Checkboxes and radio buttons that display fa-check icon from fontawesome.
 
-# How to use
 
-## Import css
+# How to install
 
-The css is located at `./dist/all.css` please include it in you html/
+## Via npm package
+
+### Step 1: Install
+
+```
+npm i @ellakcy/fa-checkbox
+```
+
+### Step 2: Load Css
+
+Built CSS is located at `./node_modules/dist/all.css`  in this package.
+
+You can include it in you html like:
+
+```
+<link rel="stylesheet" type="text/css" href="node_modules/dist/all.css">
+```
+
+### Using SASS
+
+This library is also shipped as SASS one. You casn Include:
+
+```
+@import "~some-module/sass/app";
+```
+
+
+# How to use once installed and CSS/SASS Is loaded
+
+It is assumed that Nessesary CSS or SASS is loaded upon the page as mentioned above.
 
 ## For checkboxes:
 
