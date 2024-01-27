@@ -2,6 +2,8 @@
 
 CSS and SASS library for Checkboxes and radio buttons that display fa-check icon from fontawesome.
 
+> NOTE:
+> README Under constant update.
 
 # How to install
 
