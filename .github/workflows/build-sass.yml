@@ -95,5 +95,7 @@ jobs:
         
         - id: npm-publish
           name: publish into npmjs
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ACCESS_KEY }}
           run:
             npm publish
