@@ -37,25 +37,10 @@ jobs:
           with:
             email: actions@github.com
             name: Autocommiting Built CSS
-            files: ./dist/* package.json
+            files: ./dist/*
             token: ${{ secrets.MY_SECRET_TOKEN }}
             force: true
-
-        - name: "Mark prelelease"
-          if: github.ref == 'refs/heads/dev'
-          run: |
-            npm version prerelease --preid=dev --no-commit-hooks --no-git-tag-version
-
-        - name: commit built package.json
-          if: github.ref == 'refs/heads/dev'
-          uses: actions-x/commit@v6
-          with:
-            email: actions@github.com
-            name: Mark Release as prerelease for npm
-            files: package.json
-            token: ${{ secrets.MY_SECRET_TOKEN }}
-            force: true
-
+            
         - name: version
           id: version
           run: |
