@@ -46,7 +46,7 @@ jobs:
           run: |
             npm version prerelease --preid=dev --no-commit-hooks --no-git-tag-version
         
-        - name: "Mark prelelease"
+        - name: "Minor Bump version"
           if: github.ref == 'refs/heads/master'
           run: |
             npm version patch --no-commit-hooks --no-git-tag-version
