@@ -4,7 +4,6 @@ name: "release-sass"
 on:
   push:
     branches:
-      - dev
       - master
 
 jobs:
