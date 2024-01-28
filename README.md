@@ -25,15 +25,6 @@ You can include it in you html like:
 <link rel="stylesheet" type="text/css" href="node_modules/dist/all.css">
 ```
 
-### Using SASS
-
-This library is also shipped as SASS one. You casn Include:
-
-```
-@import "~some-module/sass/app";
-```
-
-
 # How to use once installed and CSS/SASS Is loaded
 
 It is assumed that Nessesary CSS or SASS is loaded upon the page as mentioned above.
