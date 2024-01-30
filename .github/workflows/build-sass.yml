@@ -39,7 +39,27 @@ jobs:
             files: ./dist/*
             token: ${{ secrets.MY_SECRET_TOKEN }}
             force: true
-            
+
+
+        - name: "Mark prelelease"
+          if: github.ref == 'refs/heads/dev'
+          run: |
+            npm version prerelease --preid=dev --no-commit-hooks --no-git-tag-version
+        
+        - name: "Minor Bump version"
+          if: github.ref == 'refs/heads/master'
+          run: |
+            npm version patch --no-commit-hooks --no-git-tag-version
+
+        - name: commit built package.json
+          uses: actions-x/commit@v6
+          with:
+            email: actions@github.com
+            name: Mark Release as prerelease for npm
+            files: package.json
+            token: ${{ secrets.MY_SECRET_TOKEN }}
+            force: true
+
         - name: version
           id: version
           run: |
