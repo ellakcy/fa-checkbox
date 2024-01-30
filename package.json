@@ -22,7 +22,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-merge-commit": "npm run pre-merge-commit"
+      "pre-merge-commit": "npm run pre-merge-commit",
+      "prepare-commit-msg": "npm run pre-merge-commit"
     }
   },
   "devDependencies": {
