@@ -1,5 +1,6 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+import inquirer  from 'inquirer';
+import * as fs from 'fs';
+import semver from 'semver';
 
 async function bumpVersion() {
   // Read package.json
@@ -16,7 +17,7 @@ async function bumpVersion() {
   ]);
 
   // Bump the version
-  const newVersion = require('semver').inc(packageJson.version, versionType);
+  const newVersion = semver.inc(packageJson.version, versionType);
   packageJson.version = newVersion;
 
   // Write the updated package.json

@@ -17,7 +17,7 @@
     "sass": "sass scss:dist",
     "prepare": "husky install",
     "version": "echo $npm_package_version",
-    "bump-version": "node scripts/bump-version.js",
+    "bump-version": "node scripts/bump-version.mjs",
     "pre-merge-commit": "npm run bump-version && git add package.json && git add package-lock.json"
   },
   "husky": {
