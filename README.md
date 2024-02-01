@@ -6,8 +6,6 @@ CSS and SASS library for Checkboxes and radio buttons that display fa-check icon
 > README Under constant update.
 
 
-
-
 # How to install
 
 ## Via npm package
