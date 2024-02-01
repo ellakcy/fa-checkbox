@@ -22,7 +22,7 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "npm run bump-version && git add package.json && git add package-lock.json"
+      "post-merge": "npm run bump-version"
     }
   },
   "devDependencies": {
