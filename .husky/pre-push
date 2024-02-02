@@ -1,5 +1,9 @@
 #!/bin/bash
 
+IFS=' '
+while read local_ref local_sha remote_ref remote_sha;do
+done
+
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
 echo "Pushing ${current_branch}"
