@@ -2,6 +2,12 @@ import inquirer  from 'inquirer';
 import * as fs from 'fs';
 import semver from 'semver';
 
+async function flushInputBuffer() {
+  return new Promise(resolve => {
+    process.stdin.resume();
+    process.stdin.on('data', resolve);
+  });
+}
 
 async function getVersionBumpChoices(currentVersion) {
 
@@ -41,6 +47,8 @@ async function bumpVersion() {
 
   console.log(`Current version ${packageJson.version}`)
 
+  await flushInputBuffer();
+  
   const choices = await getVersionBumpChoices(packageJson.version);
   // Ask the user for the new version
   const { versionType } = await inquirer.prompt([
