@@ -5,17 +5,24 @@ import semver from 'semver';
 
 async function getVersionBumpChoices(currentVersion) {
 
-  const versionChoices = ['patch', 'minor', 'major'];
+  const versionChoices = ['patch', 'minor', 'major','none'];
 
   const messages = {
     'patch': "Patch (Bug fixes)",
     'minor': "Minor (New features)",
-    'major': "Major (Breaking changes)" 
+    'major': "Major (Breaking changes)",
+    'none':  "Keep Same"
   }
 
   // Generate choice objects with custom messages based on the current version
   const choices = versionChoices.map((bumpType) => {
 
+    if(bumpType == 'none'){
+      return {
+        name: messages[bumpType],
+        value: 'none'
+      }
+    }
     const bumpedVersion = semver.inc(currentVersion, bumpType);
     
     return {
@@ -45,6 +52,10 @@ async function bumpVersion() {
     },
   ]);
 
+  if(versionType == 'none'){
+    console.log("No version selected skipping bump");
+    process.exit(0)
+  }
   // Bump the version
   packageJson.version = versionType;
 
