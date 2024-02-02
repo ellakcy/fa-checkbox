@@ -22,7 +22,6 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "npm run bump-version"
     }
   },
   "devDependencies": {
