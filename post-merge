@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "HERE"
+echo "HERE HERE"
 
 npm run bump-version
 
