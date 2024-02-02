@@ -22,7 +22,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-merge-commit": "npm run bump-version"
+      "post-merge": "npm run bump-version"
     }
   },
   "devDependencies": {
