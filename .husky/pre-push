@@ -2,6 +2,7 @@
 
 IFS=' '
 while read local_ref local_sha remote_ref remote_sha;do
+ echo "#"
 done
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
