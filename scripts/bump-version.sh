@@ -10,7 +10,7 @@ minor_version=$(npx semver $current_version -i minor)
 major_version=$(npx semver $current_version -i major)
 
 # Choose the version bump type
-echo "Select the version bump type:"
+PS3="Select the version bump type: "
 select bump_type in "patch - Bump into ${patch_version}" "minor - Bump into ${minor_version}" "major - Bump into ${major_version}" "none - Keep Same"; do
 
   case $bump_type in
