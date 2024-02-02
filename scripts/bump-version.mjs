@@ -65,4 +65,4 @@ async function bumpVersion() {
   console.log(`Version bumped to ${versionType}`);
 }
 
-bumpVersion();
+bumpVersion().then(() => process.exit(0));
