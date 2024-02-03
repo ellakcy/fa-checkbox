@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Read the current version from package.json
 current_version=$(npm run version -s)
 
 echo "Current version: $current_version"
@@ -43,3 +42,7 @@ echo "Bumping version to $new_version"
 new_version=$(npm version ${new_version} --force --silent)
 
 echo "Version bumped to $new_version"
+
+echo "Keep package-lock.json up to spec"
+npm install
+git commit -m "AutoBump Version" package.json package-lock.json
