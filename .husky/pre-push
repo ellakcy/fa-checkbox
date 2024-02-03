@@ -9,6 +9,11 @@ done
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
+if [ $current_branch == "dev" ]; then
+  echo "No bump needed upon dev"
+  exit 0
+fi
+
 echo "Pushing ${current_branch}"
 
 current_version=$(npm run version -s)
