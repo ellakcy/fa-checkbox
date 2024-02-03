@@ -37,6 +37,7 @@ select bump_type in "patch - Bump into ${patch_version}" "minor - Bump into ${mi
 done
 
 echo "Bumping version to $new_version"
+echo
 
 # Update package.json with the new version
 new_version=$(npm version ${new_version} --force --silent)
