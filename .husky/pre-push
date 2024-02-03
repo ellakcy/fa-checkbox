@@ -26,12 +26,7 @@ done
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
-set +e
-
-if git status | grep -q modified; then
-  echo "Modified files running"
-  exit 0
-fi
+git diff-index --cached HEAD
 
 if [ $current_branch == "dev" ]; then
   echo "No bump needed upon dev"git 
