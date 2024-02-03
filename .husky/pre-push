@@ -25,11 +25,12 @@ while read local_ref local_sha remote_ref remote_sha;do
 done
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-
+echo $remote_ref
+echo
 git diff-index --cached HEAD
 
 if [ $current_branch == "dev" ]; then
-  echo "No bump needed upon dev"git 
+  echo "No bump needed upon dev" 
   exit 0
 fi
 
