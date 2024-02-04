@@ -5,6 +5,8 @@
 $checkbox-background-color: #dddddd;
 $checkbox-hover-background-color: #d3d3d3;
 
+
+
 @mixin fa-check-common {
     & {
         -webkit-appearance: none;
@@ -14,11 +16,11 @@ $checkbox-hover-background-color: #d3d3d3;
         position: relative;
         cursor: pointer;
         outline: none;
-        font: var(--fa-font-solid);
         width: 20px;
         height: 20px;
         
         &::before {
+            font: var(--fa-font-solid);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -44,18 +46,32 @@ $checkbox-hover-background-color: #d3d3d3;
     }
 }
 
+@mixin checked-fa-check {
+    font: var(--fa-font-solid);
+    content: '\f00c'; /* Unicode character for checkmark in FontAwesome */
+}
+
+@mixin checked-fa-square-check {
+    font: var(--fa-font-solid);
+    content: '\f14a';
+}
+
+@mixin solid {
+    font-weight: 600;
+}
+
 @mixin fa-check{
     &.fa-check{
         @include fa-check-common;
         &::before {
-            content: '\f00c'; /* Unicode character for checkmark in FontAwesome */
+            @include checked-fa-check
         }
     }
 
     &.fa-square-check {
         @include fa-check-common;
         &::before {
-            content: '\f14a'
+          @include checked-fa-square-check
         }
     }
 }
@@ -65,11 +81,11 @@ $checkbox-hover-background-color: #d3d3d3;
         @include fa-check;
 
         &.fa-check {
-            font-weight: 600;
+            @include solid;
         }
 
         &.fa-squre-check {
-            font-weight: 600;
+            @include solid;
         }
     }
 }

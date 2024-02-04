@@ -7,6 +7,7 @@
     <!-- Include FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <link rel="stylesheet" href="./dev/all.css">
+    <link rel="stylesheet" href="./dev/fa-select.css">
 </head>
 <body>
 
@@ -42,5 +43,20 @@
     
     <input type="text" class="fa-check" placeholder="This must not be selected">
 
+    <h1>Using Select</h1>
+    <div style="display:flex;flex-direction:column;">
+        <h1>CSS applicable only in multiple select</h1>
+        <select class="fa-square-check" multiple>
+            <option selected>Option 1</option>
+            <option selected>Option 2</option>
+            <option>Option 3</option>
+        </select>
+
+        <select class="fa-check" multiple>
+            <option selected>Option 1</option>
+            <option selected>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
 </body>
 </html>

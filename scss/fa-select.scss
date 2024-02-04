@@ -1,0 +1,21 @@
+@use "mixin";
+
+select[multiple].fa-check > option {
+
+    &::before {
+        font-size: 1rem;
+    }
+
+    &:checked::before{
+        margin-right:2px;
+        @include mixin.checked-fa-check;
+    }
+}
+
+select[multiple].fa-square-check  > option {
+
+    &:checked::before{
+        @include mixin.checked-fa-square-check;
+        margin-right:2px;
+    }
+}
