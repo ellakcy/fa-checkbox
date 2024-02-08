@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Radio Button</title>
+    <title>Radio Button ans select with strikethrough</title>
     <!-- Include FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <link rel="stylesheet" href="./dev/all.css">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <h1> Using Radio</h1>
+    <h1>Radio Buttons</h1>
     <div style="display:flex;flex-direction:column;">
         <div>
             <input id="1" type="radio" class="fa-check" name="myRadioGroup"> <label for="1">Without Border</label>
@@ -28,7 +28,7 @@
     </div>
 
 
-    <h1> Using checkbox</h1>
+    <h1>CheckBoxes</h1>
     <div style="display:flex;flex-direction:column;">
         <div>
             <input id="ck1" type="checkbox" class="fa-check" name="myRadioGroup"> <label for="ck1">Without Border</label>
@@ -43,20 +43,46 @@
     
     <input type="text" class="fa-check" placeholder="This must not be selected">
 
-    <h1>Using Select</h1>
+    <h1>Select (only multiplem supported)</h1>
+    <h2>Without Strikethrough</h2>
     <div style="display:flex;flex-direction:column;">
-        <h1>CSS applicable only in multiple select</h1>
+        
+        <h3>Using fa-square-check</h3>
+
         <select class="fa-square-check" multiple>
             <option selected>Option 1</option>
             <option selected>Option 2</option>
             <option>Option 3</option>
         </select>
 
+        <h3>Using fa-square-check</h3>
+        
         <select class="fa-check" multiple>
             <option selected>Option 1</option>
             <option selected>Option 2</option>
             <option>Option 3</option>
         </select>
     </div>
+
+    <h2>With strikethrough</h2>
+    <div style="display:flex;flex-direction:column;">
+        
+        <h3>Selected with Strikethrough</h3>
+
+        <select class="strike" multiple>
+            <option selected>Option 1</option>
+            <option selected>Option 2</option>
+            <option>Option 3</option>
+        </select>
+
+        <h3>Unselected With strikethrough</h3>
+        
+        <select class="strike-opposite" multiple>
+            <option selected>Option 1</option>
+            <option selected>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+
 </body>
 </html>
