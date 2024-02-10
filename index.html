@@ -6,9 +6,7 @@
     <title>Radio Button ans select with strikethrough</title>
     <!-- Include FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link rel="stylesheet" href="./dev/all.css">
-    <link rel="stylesheet" href="./dev/fa-select.css">
-   
+    <link rel="stylesheet" href="./dev/all.css">   
 </head>
 <body>
 
@@ -59,7 +57,23 @@
         </div>
     </div>
     
-    <h1>Select (only multiplem supported)</h1>
+    <h2>With Strikethrough</h2>
+    <div style="display:flex;flex-direction:column;">
+        <div>
+            <input id="cks1" type="checkbox" class="fa-check" name="myRadioGroup"><label for="cks1" class="strike">Milk</label>
+        </div>
+        <div>
+            <label class="strike">
+                <input id="cks6" type="checkbox" class="fa-check" style="background-color:#dddddd;" name="myRadioGroup"> 
+                Bread
+            </label>
+        </div>
+        <div>
+            <input id="cks2" type="checkbox" class="fa-check" name="myRadioGroup"> <label for="cks2" class="strike">Apples</label>
+        </div>
+    </div>
+
+    <h1>Select (only select with multiple attribute supported)</h1>
     <h2>Without Strikethrough</h2>
     <div style="display:flex;flex-direction:column;">
         
