@@ -1,0 +1,5 @@
+@use "mixin_strike";
+
+input[type="radio"]{
+    @include mixin_strike.strike_input;
+}

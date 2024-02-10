@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button ans select with strikethrough</title>
+    <!-- Include FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="./dev/fa-radio.css">
+    <link rel="stylesheet" href="./dev/radio_strike.css">
+   
+</head>
+<body>
+    <h1>Radio Buttons</h1>
+    <h2>Without Strikethrough</h2>
+    <div style="display:flex;flex-direction:column;">
+        <div>
+            <input id="1" type="radio" class="fa-check" name="myRadioGroup"> <label for="1">Without Border</label>
+        </div>
+        <div>
+            <input id="6" type="radio" class="fa-check" style="background-color:#dddddd;" name="myRadioGroup"> <label for="6">Without Border with color</label>
+        </div>
+        <div>
+            <input id="2" type="radio" class="fa-check border" name="myRadioGroup"> <label for="2">With Border</label>
+        </div>
+        <div>
+            <input id="3" type="radio" class="fa-check border radius" name="myRadioGroup"> <label for="3">With Border Radius</label>
+        </div>
+    </div>
+
+    <h2>With Strikethrough</h2>
+    <div style="display:flex;flex-direction:column;">
+        <div>
+            <input id="rs1" type="radio" class="fa-check" name="myRadioGroup"><label for="rs1" class="strike">Milk</label>
+        </div>
+        <div>
+            <label class="strike">
+                <input id="rs6" type="radio" class="fa-check" style="background-color:#dddddd;" name="myRadioGroup"> 
+                Bread
+            </label>
+        </div>
+        <div>
+            <input id="rs2" type="radio" class="fa-check" name="myRadioGroup"> <label for="rs2" class="strike">Apples</label>
+        </div>
+    </div>
+</body>
+</html>

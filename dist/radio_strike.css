@@ -1,0 +1,5 @@
+input[type=radio] + label.strike {
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=radio_strike.css.map */

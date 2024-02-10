@@ -1,5 +1,5 @@
 @use "mixin";
 
 input[type="checkbox"]{
-    @include mixin.fa-check
+    @include mixin.fa-check;
 }

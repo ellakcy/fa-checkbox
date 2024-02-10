@@ -1,6 +1,5 @@
-
 @use "mixin";
 
 input[type="radio"]{
-    @include mixin.fa-check
+    @include mixin.fa-check;
 }
