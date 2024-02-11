@@ -1,9 +1,0 @@
-@use "mixin";
-
-input[type="checkbox"]{
-    @include mixin.fa-check
-}
-
-.test {
-    color: wheat;
-}

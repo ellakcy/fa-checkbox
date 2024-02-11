@@ -1,0 +1,27 @@
+select[multiple].fa-check > option::before {
+  font-size: 1rem;
+}
+select[multiple].fa-check > option:checked::before {
+  margin-right: 2px;
+  font: var(--fa-font-solid);
+  content: "\f00c"; /* Unicode character for checkmark in FontAwesome */
+}
+
+select[multiple].fa-square-check > option:checked::before {
+  font: var(--fa-font-solid);
+  content: "\f14a";
+  margin-right: 2px;
+}
+
+select[multiple].strike > option:checked {
+  text-decoration: line-through;
+}
+
+select[multiple].strike-opposite > option {
+  text-decoration: line-through;
+}
+select[multiple].strike-opposite > option:checked {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=fa-select.css.map */

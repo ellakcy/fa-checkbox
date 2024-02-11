@@ -1,0 +1,8 @@
+@mixin strike_input {
+    &:checked + label.strike {
+        text-decoration: line-through;
+    }
+    label.strike:has(&:checked) {
+        text-decoration: line-through; 
+    }
+}

@@ -1,0 +1,5 @@
+@use "../mixins/mixin_strike";
+
+input[type="checkbox"] {
+    @include mixin_strike.strike_input;
+}
