@@ -1,0 +1,8 @@
+input[type=checkbox]:checked + label.strike {
+  text-decoration: line-through;
+}
+label.strike:has(input[type=checkbox]:checked) {
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=checkbox_strike.css.map */
