@@ -3,3 +3,5 @@ Dockerfile
 .husky
 .github
 dev
+README.md
+Changelog.md

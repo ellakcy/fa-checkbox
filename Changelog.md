@@ -10,3 +10,7 @@ Test deployments.
 New Features:
 * Styling options.
 * Strikethrough upon label and options
+
+# v2.0.1
+
+Improved documentation. Introduction of changelog. Ignoring files from lib at `.npmignore`.
