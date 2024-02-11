@@ -1,0 +1,8 @@
+input[type=radio]:checked + label.strike {
+  text-decoration: line-through;
+}
+label.strike:has(input[type=radio]:checked) {
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=radio_strike.css.map */

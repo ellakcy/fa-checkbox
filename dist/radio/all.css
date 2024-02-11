@@ -1,0 +1,79 @@
+input[type=radio]:checked + label.strike {
+  text-decoration: line-through;
+}
+label.strike:has(input[type=radio]:checked) {
+  text-decoration: line-through;
+}
+
+input[type=radio].fa-check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  width: 20px;
+  height: 20px;
+}
+input[type=radio].fa-check::before {
+  font: var(--fa-font-solid);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+input[type=radio].fa-check.border {
+  border: 1px solid;
+}
+input[type=radio].fa-check.radius {
+  border-radius: 10%;
+}
+input[type=radio].fa-check:hover {
+  background-color: #d3d3d3;
+}
+input[type=radio].fa-check:checked::before {
+  visibility: visible;
+}
+input[type=radio].fa-check::before {
+  font: var(--fa-font-solid);
+  content: "\f00c"; /* Unicode character for checkmark in FontAwesome */
+}
+input[type=radio].fa-square-check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  width: 20px;
+  height: 20px;
+}
+input[type=radio].fa-square-check::before {
+  font: var(--fa-font-solid);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+input[type=radio].fa-square-check.border {
+  border: 1px solid;
+}
+input[type=radio].fa-square-check.radius {
+  border-radius: 10%;
+}
+input[type=radio].fa-square-check:hover {
+  background-color: #d3d3d3;
+}
+input[type=radio].fa-square-check:checked::before {
+  visibility: visible;
+}
+input[type=radio].fa-square-check::before {
+  font: var(--fa-font-solid);
+  content: "\f14a";
+}
+
+/*# sourceMappingURL=all.css.map */

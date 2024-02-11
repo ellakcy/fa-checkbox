@@ -1,3 +1,29 @@
+select[multiple].fa-check > option::before {
+  font-size: 1rem;
+}
+select[multiple].fa-check > option:checked::before {
+  margin-right: 2px;
+  font: var(--fa-font-solid);
+  content: "\f00c"; /* Unicode character for checkmark in FontAwesome */
+}
+
+select[multiple].fa-square-check > option:checked::before {
+  font: var(--fa-font-solid);
+  content: "\f14a";
+  margin-right: 2px;
+}
+
+select[multiple].strike > option:checked {
+  text-decoration: line-through;
+}
+
+select[multiple].strike-opposite > option {
+  text-decoration: line-through;
+}
+select[multiple].strike-opposite > option:checked {
+  text-decoration: none;
+}
+
 input[type=checkbox].fa-check {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -9,6 +35,7 @@ input[type=checkbox].fa-check {
   width: 20px;
   height: 20px;
 }
+
 input[type=checkbox].fa-check::before {
   font: var(--fa-font-solid);
   position: absolute;
@@ -17,22 +44,28 @@ input[type=checkbox].fa-check::before {
   transform: translate(-50%, -50%);
   visibility: hidden;
 }
+
 input[type=checkbox].fa-check.border {
   border: 1px solid;
 }
+
 input[type=checkbox].fa-check.radius {
   border-radius: 10%;
 }
+
 input[type=checkbox].fa-check:hover {
   background-color: #d3d3d3;
 }
-input[type=checkbox].fa-check:checked ::before {
+
+input[type=checkbox].fa-check:checked::before {
   visibility: visible;
 }
+
 input[type=checkbox].fa-check::before {
   font: var(--fa-font-solid);
   content: "\f00c"; /* Unicode character for checkmark in FontAwesome */
 }
+
 input[type=checkbox].fa-square-check {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -44,6 +77,7 @@ input[type=checkbox].fa-square-check {
   width: 20px;
   height: 20px;
 }
+
 input[type=checkbox].fa-square-check::before {
   font: var(--fa-font-solid);
   position: absolute;
@@ -52,21 +86,41 @@ input[type=checkbox].fa-square-check::before {
   transform: translate(-50%, -50%);
   visibility: hidden;
 }
+
 input[type=checkbox].fa-square-check.border {
   border: 1px solid;
 }
+
 input[type=checkbox].fa-square-check.radius {
   border-radius: 10%;
 }
+
 input[type=checkbox].fa-square-check:hover {
   background-color: #d3d3d3;
 }
-input[type=checkbox].fa-square-check:checked ::before {
+
+input[type=checkbox].fa-square-check:checked::before {
   visibility: visible;
 }
+
 input[type=checkbox].fa-square-check::before {
   font: var(--fa-font-solid);
   content: "\f14a";
+}
+
+input[type=checkbox]:checked + label.strike {
+  text-decoration: line-through;
+}
+
+label.strike:has(input[type=checkbox]:checked) {
+  text-decoration: line-through;
+}
+
+input[type=radio]:checked + label.strike {
+  text-decoration: line-through;
+}
+label.strike:has(input[type=radio]:checked) {
+  text-decoration: line-through;
 }
 
 input[type=radio].fa-check {
@@ -97,7 +151,7 @@ input[type=radio].fa-check.radius {
 input[type=radio].fa-check:hover {
   background-color: #d3d3d3;
 }
-input[type=radio].fa-check:checked ::before {
+input[type=radio].fa-check:checked::before {
   visibility: visible;
 }
 input[type=radio].fa-check::before {
@@ -132,42 +186,12 @@ input[type=radio].fa-square-check.radius {
 input[type=radio].fa-square-check:hover {
   background-color: #d3d3d3;
 }
-input[type=radio].fa-square-check:checked ::before {
+input[type=radio].fa-square-check:checked::before {
   visibility: visible;
 }
 input[type=radio].fa-square-check::before {
   font: var(--fa-font-solid);
   content: "\f14a";
-}
-
-select[multiple].fa-check > option::before {
-  font-size: 1rem;
-}
-select[multiple].fa-check > option:checked::before {
-  margin-right: 2px;
-  font: var(--fa-font-solid);
-  content: "\f00c"; /* Unicode character for checkmark in FontAwesome */
-}
-
-select[multiple].fa-square-check > option:checked::before {
-  font: var(--fa-font-solid);
-  content: "\f14a";
-  margin-right: 2px;
-}
-
-select[multiple].strike > option:checked {
-  text-decoration: line-through;
-}
-
-select[multiple].strike-opposite > option {
-  text-decoration: line-through;
-}
-select[multiple].strike-opposite > option:checked {
-  text-decoration: none;
-}
-
-input[type=radio] + label.strike {
-  text-decoration: line-through;
 }
 
 /**

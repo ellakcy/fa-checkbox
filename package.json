@@ -2,7 +2,7 @@
   "name": "@ellakcy/fa-checkbox",
   "author": "Cypriot Free Software Foundation",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "2.0.1",
   "description": "CSS and SASS lib that shows a shows beautifull checkboxed using fontawesome",
   "main": "index.html",
   "keywords": [
